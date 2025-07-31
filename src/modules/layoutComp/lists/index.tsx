@@ -1,19 +1,20 @@
-import React from "react";
-
-type RegularListProps = {
-  items: any[];
-  sourceName: string;
-  ItemComp: any;
+type RegularListProps<T, K extends string> = {
+  items: T[];
+  sourceName: K;
+  ItemComp: React.ComponentType<{ [key in K]: T }>;
 };
-export const RegularList = ({
+
+export const RegularList = <T, K extends string>({
   items,
   sourceName,
   ItemComp,
-}: RegularListProps) => {
+}: RegularListProps<T, K>) => {
   return (
     <>
       {items.map((item, index) => (
-        <ItemComp key={index} {...{ [sourceName]: item }} />
+        <div key={index}>
+          <ItemComp {...({ [sourceName]: item } as { [key in K]: T })} />
+        </div>
       ))}
     </>
   );
