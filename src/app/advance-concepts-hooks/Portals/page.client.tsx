@@ -10,7 +10,9 @@ export const PortalsPageClient = ({ isPortal }: { isPortal?: boolean }) => {
       className="mt-20 relative"
     >
       <button onClick={() => setOpen(true)}>Open</button>
-      <Alert open={open} onClose={() => setOpen(false)} isPortal={isPortal} />
+      <div onClick={() => console.log("Item Parent")}>
+        <Alert open={open} onClose={() => setOpen(false)} isPortal={isPortal} />
+      </div>
     </div>
   );
 };
@@ -30,7 +32,10 @@ const Alert = ({
   return (
     <div
       className="p-4 bg-blue-500 absolute top-1 right-1/2 translate-x-1/2"
-      onClick={onClose}
+      // onClick={onClose}
+      onClick={(e) => {
+        console.log("inside Alert");
+      }}
     >
       Click me to Close
     </div>

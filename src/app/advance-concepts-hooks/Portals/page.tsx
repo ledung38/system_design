@@ -1,7 +1,7 @@
-import { PortalsPageClient } from "@/app/advance-concepts-hooks/Portals/page.client";
+import { PortalsPageClient } from "@/app/advance-concepts-hooks/portals/page.client";
 import React from "react";
 
-export const PortalsPage = () => {
+const PortalsPage = () => {
   return (
     <>
       <PortalsPageClient isPortal />
@@ -9,3 +9,5 @@ export const PortalsPage = () => {
     </>
   );
 };
+
+export default PortalsPage;

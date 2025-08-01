@@ -10,43 +10,39 @@ export const FlexLayoutHeader = ({
   layoutRef: any;
 }) => {
   //   const { addTab } = model;
-
-  console.log("model", model?.getActiveTabset());
-  const addNode = (e) => {
-    layoutRef(e);
-    return;
-    const activeTabset = model?.getRoot();
-    console.log("activeTabset", activeTabset);
-    model.doAction(
-      //   Actions.addNode(
-      //     {
-      //       type: "tabset",
-      //       name: "New Tab",
-      //       component: "FlexLayoutFour",
-      //     },
-      //     activeTabset?.attributes?.id, // ID tabset đang được chọn, hoặc ID cụ thể
-      //     DockLocation.CENTER,
-      //     -1 // vị trí -1 nghĩa là thêm vào cuối
-      //   )
-      Actions.addNode(
-        {
-          type: "tabset",
-          name: "New Tab",
-          weight: 25,
-          children: [
-            {
-              type: "tab",
-              name: "Tabset mới",
-              component: "FlexLayoutFive",
-            },
-          ],
-        },
-        activeTabset?.attributes?.id, // ID tabset đang được chọn, hoặc ID cụ thể
-        DockLocation.CENTER,
-        -1 // vị trí -1 nghĩa là thêm vào cuối
-      )
-    );
-  };
+  //   const addNode = (e) => {
+  //     const activeTabset = model?.getRoot();
+  //     console.log("activeTabset", activeTabset);
+  //     model.doAction(
+  //         Actions.addNode(
+  //           {
+  //             type: "tabset",
+  //             name: "New Tab",
+  //             component: "FlexLayoutFour",
+  //           },
+  //           activeTabset?.attributes?.id, // ID tabset đang được chọn, hoặc ID cụ thể
+  //           DockLocation.CENTER,
+  //           -1 // vị trí -1 nghĩa là thêm vào cuối
+  //         )
+  //       Actions.addNode(
+  //         {
+  //           type: "tabset",
+  //           name: "New Tab",
+  //           weight: 25,
+  //           children: [
+  //             {
+  //               type: "tab",
+  //               name: "Tabset mới",
+  //               component: "FlexLayoutFive",
+  //             },
+  //           ],
+  //         },
+  //         activeTabset?.attributes?.id, // ID tabset đang được chọn, hoặc ID cụ thể
+  //         DockLocation.CENTER,
+  //         -1 // vị trí -1 nghĩa là thêm vào cuối
+  //       )
+  //     );
+  //   };
 
   const handleDragStart = (
     e: React.DragEvent<HTMLDivElement>,

@@ -1,8 +1,8 @@
-import { PortalsPage } from "@/app/advance-concepts-hooks/Portals/page";
+import { PortalsPage } from "@/app/advance-concepts-hooks/portals/page";
 import React from "react";
 
 const Page = () => {
-  return <PortalsPage />;
+  throw new Error("error");
 };
 
 export default Page;
