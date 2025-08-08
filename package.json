@@ -5,12 +5,13 @@
   "scripts": {
     "dev": "next dev --turbopack -p 3088",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 3088",
     "lint": "next lint"
   },
   "dependencies": {
     "flexlayout-react": "^0.8.17",
     "next": "15.4.3",
+    "nextjs-toploader": "^3.8.16",
     "react": "19.1.0",
     "react-dom": "19.1.0"
   },

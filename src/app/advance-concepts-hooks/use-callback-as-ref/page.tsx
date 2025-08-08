@@ -6,7 +6,7 @@ const Page = () => {
   // Xử lý khi element thực sự mount vào DOM và khi unmount.
   // Nếu có TH input chưa xuất hiện như giả lập switch open thì khi dùng useRef nó sẽ null, useEffect sẽ null
   //   Dùng useCallback ref khi bạn cần phản ứng với việc DOM được mount/unmount, hoặc cần sự chủ động cao hơn trong việc điều khiển node.
-  const ref = useCallback((input) => {
+  const ref = useCallback((input: HTMLInputElement) => {
     if (!input) return;
     input.focus();
   }, []);

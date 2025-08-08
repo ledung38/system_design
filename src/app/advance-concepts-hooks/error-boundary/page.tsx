@@ -1,8 +1,10 @@
-import { PortalsPage } from "@/app/advance-concepts-hooks/portals/page";
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 
 const Page = () => {
-  throw new Error("error");
+  useEffect(() => {
+    throw new Error("error");
+  }, []);
 };
 
 export default Page;

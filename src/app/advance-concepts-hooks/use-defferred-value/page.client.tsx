@@ -1,3 +1,4 @@
+"use client";
 import { useRenderCount } from "@/hooks/useCountRender";
 import { memo } from "react";
 
@@ -15,3 +16,4 @@ function CountRenderCompInner({ value }: { value: string }) {
 }
 
 export const CountRenderComp = memo(CountRenderCompInner);
+export default CountRenderComp;
