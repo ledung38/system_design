@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ErrorBoundary } from "@/modules/errorBoundary";
+import NextTopLoader from "nextjs-toploader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +29,17 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* <ErrorBoundary fallback={<div>Something went wrong</div>}> */}
+        <NextTopLoader
+          color="red"
+          zIndex={100000}
+          showSpinner={false}
+          crawlSpeed={200}
+          crawl={true}
+          height={3}
+        />
         {children}
+        {/* </ErrorBoundary> */}
       </body>
     </html>
   );
