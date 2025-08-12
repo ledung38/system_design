@@ -9,11 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "clsx": "^2.1.1",
+    "color-name-list": "^11.24.0",
     "flexlayout-react": "^0.8.17",
+    "lodash.uniq": "^4.5.0",
+    "lodash.uniqueid": "^4.0.1",
     "next": "15.4.3",
     "nextjs-toploader": "^3.8.16",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "simpler-color": "^1.0.2"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
