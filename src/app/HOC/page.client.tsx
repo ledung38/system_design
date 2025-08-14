@@ -1,24 +1,33 @@
+import { useRouter } from "next/router";
 import React from "react";
-type Props<K extends string> = {
-  children: React.ReactNode;
-  sourceName: K;
-};
-const ContainerClientComp = <K extends string>({
-  children,
-  sourceName,
-}: Props<K>) => {
-  const user = { name: "John Doe", age: 30 };
 
-  return (
-    <div className="text-3xl text-blue-500 m-auto w-full text-center mt-[50vh]">
-      {React.Children.map(children, (child) => {
-        if (React.isValidElement(child)) {
-          return React.cloneElement(child, { [sourceName]: user });
-        }
-        return child;
-      })}
-    </div>
-  );
-};
+// Higher-Order Component
+function withAuth(WrappedComponent = () => <></>) {
+  return function AuthComponent(props = {}) {
+    const route = useRouter();
+    const isLoggedIn = Boolean(localStorage.getItem("token"));
 
-export default ContainerClientComp;
+    React.useEffect(() => {
+      if (!isLoggedIn) {
+        route.push("/login");
+      }
+    }, [isLoggedIn, route]);
+
+    if (!isLoggedIn) return null; // hoặc loading spinner
+    return <WrappedComponent {...props} />;
+  };
+}
+
+export default withAuth;
+
+function Dashboard() {
+  return <h1>Trang Dashboard</h1>;
+}
+
+function Profile() {
+  return <h1>Trang Profile</h1>;
+}
+
+// Bọc component
+export const ProtectedDashboard = withAuth(Dashboard);
+export const ProtectedProfile = withAuth(Profile);
