@@ -1,4 +1,3 @@
-"use client";
 import { ColorProvider } from "@/component/custom/context/context";
 import { PropsWithChildren } from "react";
 

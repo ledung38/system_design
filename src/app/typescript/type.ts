@@ -162,3 +162,16 @@ const buildLinked = <T>(value: T): Linked<T> => ({
 
 const stringLinked = buildLinked<string>("a");
 const numberLinked = buildLinked<number>(1);
+
+// extracting type with as const
+const BUTTON_TYPE = {
+  0: "warning",
+  1: "success",
+  2: "error",
+} as const;
+
+type ButtonType = typeof BUTTON_TYPE;
+
+type KeyOfButtonType = keyof ButtonType;
+
+type ValueOfButtonType = ButtonType[KeyOfButtonType];
